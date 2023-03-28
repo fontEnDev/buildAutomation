@@ -7,7 +7,7 @@ import org.apache.jmeter.engine.util.CompoundVariable;
 //import org.apache.jmeter.reporters.Summariser;
 //import org.apache.jmeter.testelement.TestElement;
 //import org.apache.jmeter.util.JMeterUtils;
-//import org.apache.jmeter.util.ScriptingTestElement;
+import org.apache.jmeter.util.ScriptingTestElement;
 //import org.apache.jmeter.util.ScriptingTestElementBeanInfo;
 import org.apache.jorphan.collections.HashTree;
 
