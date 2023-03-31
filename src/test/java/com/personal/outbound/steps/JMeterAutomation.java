@@ -4,6 +4,7 @@ import org.apache.jmeter.engine.StandardJMeterEngine;
 import org.apache.jmeter.protocol.http.sampler.HTTPSampler;
 import org.apache.jmeter.reporters.ResultCollector;
 import org.apache.jmeter.reporters.Summariser;
+import org.apache.jmeter.samplers.SampleResult;
 import org.apache.jmeter.save.SaveService;
 import org.apache.jmeter.testelement.TestElement;
 import org.apache.jmeter.testelement.TestPlan;
@@ -26,21 +27,5 @@ public class JMeterAutomation {
         JMeterUtils.loadJMeterProperties(jmeterHome + "/bin/jmeter.properties");
         JMeterUtils.initLocale();
 
-// Load test plan from the .jmx file
-        File jmxFile = new File(jmeterHome + "/bin/TestPlan.jmx");
-        HashTree testPlanTree = SaveService.loadTree(jmxFile);
-
-// Configure summariser to generate test results summary
-        Summariser summariser = new Summariser();
-        ResultCollector resultCollector = new ResultCollector(summariser);
-        testPlanTree.add(testPlanTree.getArray()[0], resultCollector);
-
-// Run the test plan
-        StandardJMeterEngine jmeter = new StandardJMeterEngine();
-        TestPlan testPlan = (TestPlan) testPlanTree.getArray()[0];
-        jmeter.configure(testPlanTree);
-        jmeter.run();
     }
-
-
 }
