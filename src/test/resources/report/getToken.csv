@@ -1,0 +1,3 @@
+label,responseCode,responseMessage,threadName,success,failureMessage,bytes,URL
+getToken,200,OK,get_Token 1-1,true,,4592,https://dev-8.ixcc-sandbox.avayacloud.com/auth/realms/system/protocol/openid-connect/token
+Debug Sampler,200,OK,get_Token 1-1,true,,2012,null

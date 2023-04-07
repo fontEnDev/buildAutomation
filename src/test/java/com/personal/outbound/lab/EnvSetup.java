@@ -26,38 +26,8 @@ public class EnvSetup {
     public static String SUITE_PATH = System.getProperty("user.dir") + "/";
     public static String DEFAULT_BROWSER_NAME = "";
 
+    public static String JMETER_HOME = "";
 
-
-//
-    public static void main(String[] args) {
-        String [] Array_1 = {"Nuong", "Nuong1", "Nuong2"};
-        String Array_2 []={"But", "Thuoc", "Sach", "vo"};
-        for (int i = 0; i < Array_1.length; i++){
-            if(i == Array_1.length - 1){
-                System.out.println(Array_1[i]);
-            }
-            else {
-                System.out.print(Array_1[i] + "\t");
-            }
-        }
-        for (String element:Array_2){
-            System.out.print(element + "\t");
-        }
-
-//
-//        UtilityFun utilityFun = new UtilityFun();
-//        USER_PROPERTY_FILE_PATH = SUITE_PATH + "src/test/resources/config/fileConfigure.properties";
-//        Properties prop = new Properties();
-//        try (InputStream input = Files.newInputStream(Paths.get(USER_PROPERTY_FILE_PATH))) {
-//            prop.load(input);
-//            prop.entrySet().removeIf(e -> e.getValue().toString().matches("[`'\"]\\s*[`'\"]|\\s+|[`'\"]\\s*|\\s*[`'\"]|^$"));
-//            prop.putAll(System.getProperties());
-//        } catch (Exception e) {
-//            System.out.println("Exception when load properties file");
-//            e.printStackTrace();
-//        }
-//        System.out.println("Properties File Path: " + prop.getProperty("Browser"));
-    }
 
     public EnvSetup() {
         System.setProperty("webdriver.http.factory", "jdk-http-client");
@@ -78,6 +48,7 @@ public class EnvSetup {
         DRIVER_PATH = prop.getProperty("DriverPath", SUITE_PATH + "src/test/resources/drivers/");
         DRIVER_PATH = DRIVER_PATH.matches(".*[/\\\\]$") ? DRIVER_PATH : DRIVER_PATH + "\\";
         baseUrl = prop.getProperty("BASE_URL");
+        JMETER_HOME = prop.getProperty("Jmeter_Home");
         //
 
     }
