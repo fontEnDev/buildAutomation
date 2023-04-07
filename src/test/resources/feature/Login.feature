@@ -5,4 +5,4 @@ Feature: This is build Project
 
     Scenario: Verify User can go to campaign strategy
       Given The Campaign Strategy URL is hit
-      And Add new campaign strategy
+      And Get Price of Course "Mobile Automation Testing from Scratch" on Table

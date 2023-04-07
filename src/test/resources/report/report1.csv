@@ -1,0 +1,21 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1680854347802,636,getToken,200,OK,get_Token 1-1,text,true,,4592,424,1,1,https://dev-8.ixcc-sandbox.avayacloud.com/auth/realms/system/protocol/openid-connect/token,635,0,271
+1680854348915,1007,getToken,200,OK,get_Token 1-2,text,true,,4592,424,1,1,https://dev-8.ixcc-sandbox.avayacloud.com/auth/realms/system/protocol/openid-connect/token,1006,0,257
+1680854350041,443,getToken,200,OK,get_Token 1-3,text,true,,4592,424,1,1,https://dev-8.ixcc-sandbox.avayacloud.com/auth/realms/system/protocol/openid-connect/token,442,0,137
+1680854351151,888,getToken,200,OK,get_Token 1-4,text,true,,4592,424,1,1,https://dev-8.ixcc-sandbox.avayacloud.com/auth/realms/system/protocol/openid-connect/token,888,0,133
+1680854352262,426,getToken,200,OK,get_Token 1-5,text,true,,4592,424,1,1,https://dev-8.ixcc-sandbox.avayacloud.com/auth/realms/system/protocol/openid-connect/token,425,0,124
+1680854353372,902,getToken,200,OK,get_Token 1-6,text,true,,4592,424,1,1,https://dev-8.ixcc-sandbox.avayacloud.com/auth/realms/system/protocol/openid-connect/token,901,0,157
+1680854354481,433,getToken,200,OK,get_Token 1-7,text,true,,4592,424,1,1,https://dev-8.ixcc-sandbox.avayacloud.com/auth/realms/system/protocol/openid-connect/token,432,0,131
+1680854355590,462,getToken,200,OK,get_Token 1-8,text,true,,4592,424,1,1,https://dev-8.ixcc-sandbox.avayacloud.com/auth/realms/system/protocol/openid-connect/token,461,0,150
+1680854356697,439,getToken,200,OK,get_Token 1-9,text,true,,4592,424,1,1,https://dev-8.ixcc-sandbox.avayacloud.com/auth/realms/system/protocol/openid-connect/token,438,0,132
+1680854357801,434,getToken,200,OK,get_Token 1-10,text,true,,4592,424,1,1,https://dev-8.ixcc-sandbox.avayacloud.com/auth/realms/system/protocol/openid-connect/token,433,0,127
+1680854938804,1032,getToken,200,OK,get_Token 1-1,text,true,,4592,424,2,2,https://dev-8.ixcc-sandbox.avayacloud.com/auth/realms/system/protocol/openid-connect/token,1012,0,705
+1680854939732,459,getToken,200,OK,get_Token 1-2,text,true,,4592,424,1,1,https://dev-8.ixcc-sandbox.avayacloud.com/auth/realms/system/protocol/openid-connect/token,458,0,140
+1680854940856,465,getToken,200,OK,get_Token 1-3,text,true,,4592,424,1,1,https://dev-8.ixcc-sandbox.avayacloud.com/auth/realms/system/protocol/openid-connect/token,464,0,147
+1680854941968,443,getToken,200,OK,get_Token 1-4,text,true,,4592,424,1,1,https://dev-8.ixcc-sandbox.avayacloud.com/auth/realms/system/protocol/openid-connect/token,442,0,127
+1680854943080,436,getToken,200,OK,get_Token 1-5,text,true,,4592,424,1,1,https://dev-8.ixcc-sandbox.avayacloud.com/auth/realms/system/protocol/openid-connect/token,435,0,129
+1680854944190,433,getToken,200,OK,get_Token 1-6,text,true,,4592,424,1,1,https://dev-8.ixcc-sandbox.avayacloud.com/auth/realms/system/protocol/openid-connect/token,432,0,126
+1680854945298,426,getToken,200,OK,get_Token 1-7,text,true,,4592,424,1,1,https://dev-8.ixcc-sandbox.avayacloud.com/auth/realms/system/protocol/openid-connect/token,423,0,119
+1680854946407,461,getToken,200,OK,get_Token 1-8,text,true,,4592,424,1,1,https://dev-8.ixcc-sandbox.avayacloud.com/auth/realms/system/protocol/openid-connect/token,461,0,140
+1680854947513,453,getToken,200,OK,get_Token 1-9,text,true,,4592,424,1,1,https://dev-8.ixcc-sandbox.avayacloud.com/auth/realms/system/protocol/openid-connect/token,452,0,133
+1680854948616,429,getToken,200,OK,get_Token 1-10,text,true,,4592,424,1,1,https://dev-8.ixcc-sandbox.avayacloud.com/auth/realms/system/protocol/openid-connect/token,429,0,125

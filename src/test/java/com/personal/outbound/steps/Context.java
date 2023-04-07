@@ -2,6 +2,7 @@ package com.personal.outbound.steps;
 
 import com.personal.outbound.frame.CampaignManager;
 import com.personal.outbound.frame.CampaignStrategys;
+import com.personal.outbound.frame.CommonFunction;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -13,4 +14,6 @@ public class Context {
     public CampaignManager CampaignManagerObj;
 
     public CampaignStrategys CampaignStrategysObj;
+
+    public CommonFunction commonFunction;
 }

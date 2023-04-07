@@ -2,6 +2,7 @@ package com.personal.outbound.steps;
 
 import com.personal.outbound.frame.CampaignManager;
 import com.personal.outbound.frame.CampaignStrategys;
+import com.personal.outbound.frame.CommonFunction;
 import com.personal.outbound.lab.EnvSetup;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -39,6 +40,7 @@ public class Hook {
         context.testData = new HashMap<>();
         context.CampaignManagerObj = new CampaignManager(context.driver);
         context.CampaignStrategysObj = new CampaignStrategys(context.driver);
+        context.commonFunction = new CommonFunction();
 
     }
 

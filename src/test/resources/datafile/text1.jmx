@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.5">
+  <org.apache.jorphan.collections.HashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Get_Token">
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="contact_URL" elementType="Argument">
+            <stringProp name="Argument.name">contact_URL</stringProp>
+            <stringProp name="Argument.value">contacts-api.avaya-obaas.com</stringProp>
+          </elementProp>
+          <elementProp name="Token" elementType="Argument">
+            <stringProp name="Argument.name">Token</stringProp>
+            <stringProp name="Argument.value"></stringProp>
+          </elementProp>
+          <elementProp name="Hello" elementType="Argument">
+            <stringProp name="Argument.name">Hello</stringProp>
+            <stringProp name="Argument.value">token</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="Text" elementType="Argument">
+            <stringProp name="Argument.name">Text</stringProp>
+            <stringProp name="Argument.value">Hello</stringProp>
+          </elementProp>
+        </collectionProp>
+      </elementProp>
+    </TestPlan>
+    <org.apache.jorphan.collections.HashTree>
+      <Summariser guiclass="SummariserGui" testclass="Summariser" testname="Summary_Report"/>
+      <org.apache.jorphan.collections.HashTree/>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="get_Token">
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <longProp name="ThreadGroup.duration">5</longProp>
+        <longProp name="ThreadGroup.delay">2</longProp>
+        <intProp name="ThreadGroup.num_threads">10</intProp>
+        <intProp name="ThreadGroup.ramp_time">10</intProp>
+        <stringProp name="ThreadGroup.on_sample_error">stoptest</stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">false</boolProp>
+        <stringProp name="ThreadGroup.delayedStart">true</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <intProp name="LoopController.loops">1</intProp>
+        </elementProp>
+      </ThreadGroup>
+      <org.apache.jorphan.collections.HashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="getToken">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="Content-Type" elementType="HTTPArgument" guiclass="HTTPArgumentsPanel" testclass="HTTPArgument">
+                <stringProp name="Argument.name">Content-Type</stringProp>
+                <stringProp name="Argument.value">application/x-www-form-urlencoded</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+              </elementProp>
+              <elementProp name="grant_type" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">grant_type</stringProp>
+                <stringProp name="Argument.value">client_credentials</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="scope" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">scope</stringProp>
+                <stringProp name="Argument.value">openid</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="client_secret" elementType="HTTPArgument">
+                <stringProp name="Argument.name">client_secret</stringProp>
+                <stringProp name="Argument.value">dn2ITSPPLLjSX9i6fA0QTIlDi5DcL7tZ</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="client_id" elementType="HTTPArgument">
+                <stringProp name="Argument.name">client_id</stringProp>
+                <stringProp name="Argument.value">obaas-admin</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="TestPlan.comments">Request GET google.com</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.domain">dev-8.ixcc-sandbox.avayacloud.com</stringProp>
+          <stringProp name="HTTPSampler.path">/auth/realms/system/protocol/openid-connect/token</stringProp>
+        </HTTPSamplerProxy>
+        <org.apache.jorphan.collections.HashTree>
+          <Summariser reference="../../../Summariser"/>
+          <org.apache.jorphan.collections.HashTree/>
+          <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="saveToken">
+            <stringProp name="TestPlan.comments">add token to properties file</stringProp>
+          </BeanShellPostProcessor>
+          <org.apache.jorphan.collections.HashTree/>
+          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="getToke">
+            <stringProp name="Sample.scope">all</stringProp>
+            <stringProp name="TestPlan.comments">Automation</stringProp>
+            <stringProp name="JSONPostProcessor.referenceNames">Bearer</stringProp>
+            <stringProp name="JSONPostProcessor.jsonPathExprs">$.access_token</stringProp>
+            <stringProp name="JSONPostProcessor.defaultValues">NOTFOUNDTOKEN</stringProp>
+            <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+          </JSONPostProcessor>
+          <org.apache.jorphan.collections.HashTree/>
+          <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug variable">
+            <stringProp name="displaySystemProperties">true</stringProp>
+          </DebugSampler>
+          <org.apache.jorphan.collections.HashTree/>
+          <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="report_1">
+            <boolProp name="ResultCollector.error_logging">false</boolProp>
+            <objProp>
+              <name>saveConfig</name>
+              <value class="SampleSaveConfiguration">
+                <time>true</time>
+                <latency>true</latency>
+                <timestamp>true</timestamp>
+                <success>true</success>
+                <label>true</label>
+                <code>true</code>
+                <message>true</message>
+                <threadName>true</threadName>
+                <dataType>true</dataType>
+                <encoding>false</encoding>
+                <assertions>true</assertions>
+                <subresults>true</subresults>
+                <responseData>false</responseData>
+                <samplerData>false</samplerData>
+                <xml>false</xml>
+                <fieldNames>true</fieldNames>
+                <responseHeaders>false</responseHeaders>
+                <requestHeaders>false</requestHeaders>
+                <responseDataOnError>false</responseDataOnError>
+                <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+                <assertionsResultsToSave>0</assertionsResultsToSave>
+                <bytes>true</bytes>
+                <sentBytes>true</sentBytes>
+                <url>true</url>
+                <threadCounts>true</threadCounts>
+                <idleTime>true</idleTime>
+                <connectTime>true</connectTime>
+              </value>
+            </objProp>
+            <stringProp name="filename">C:\Users\vvtruong\Downloads\ProjectTester\ProjectTester\AutoBuild\src\test\resources\report\report1.csv</stringProp>
+          </ResultCollector>
+          <org.apache.jorphan.collections.HashTree/>
+        </org.apache.jorphan.collections.HashTree>
+      </org.apache.jorphan.collections.HashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="AddContactList">
+        <intProp name="ThreadGroup.num_threads">5</intProp>
+        <intProp name="ThreadGroup.ramp_time">10</intProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController">
+          <boolProp reference="../../../ThreadGroup/elementProp/boolProp"/>
+          <intProp reference="../../../ThreadGroup/elementProp/intProp"/>
+        </elementProp>
+      </ThreadGroup>
+      <org.apache.jorphan.collections.HashTree>
+        <Summariser reference="../../Summariser"/>
+        <org.apache.jorphan.collections.HashTree/>
+        <ResultCollector reference="../../org.apache.jorphan.collections.HashTree[2]/org.apache.jorphan.collections.HashTree/ResultCollector"/>
+        <org.apache.jorphan.collections.HashTree/>
+        <HTTPSampler__ guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="AddContactList">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="TestPlan.comments">Request GET google.com</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.domain">dev-8.ixcc-sandbox.avayacloud.com</stringProp>
+          <stringProp name="HTTPSampler.path">/auth/realms/system/protocol/openid-connect/token</stringProp>
+        </HTTPSampler__>
+        <org.apache.jorphan.collections.HashTree/>
+      </org.apache.jorphan.collections.HashTree>
+    </org.apache.jorphan.collections.HashTree>
+  </org.apache.jorphan.collections.HashTree>
+</jmeterTestPlan>

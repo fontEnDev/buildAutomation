@@ -1,0 +1,3 @@
+label,responseCode,responseMessage,threadName,success,failureMessage,grpThreads,allThreads,Connect
+Token,200,OK,GetToken 1-1,true,,1,1,199
+Debug Sampler,200,OK,GetToken 1-1,true,,1,1,0

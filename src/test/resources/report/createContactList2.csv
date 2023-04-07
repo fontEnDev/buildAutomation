@@ -1,0 +1,3 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1680840550149,520,Token,200,OK,GetToken 1-1,text,true,,4597,429,1,1,https://dev-8.ixcc-sandbox.avayacloud.com/auth/realms/system/protocol/openid-connect/token,519,0,199
+1680840550698,1,Debug Sampler,200,OK,GetToken 1-1,text,true,,2171,0,1,1,null,0,0,0
